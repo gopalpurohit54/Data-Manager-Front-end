@@ -8,8 +8,6 @@ import { storeData } from "../redux/action";
 const StudentForm = (props) => {
   const history = useHistory();
   const submitHandler = (formData) => {
-    // console.log(formData);
-    // props.storeData(formData);
     fetch("http://localhost:5000/create", {
       method: "POST",
       headers: {
@@ -33,13 +31,5 @@ const StudentForm = (props) => {
   return <Form onSubmit={submitHandler} />;
 };
 
-const mapStateToProps = (state) => {
-  return {};
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    storeData: (data) => dispatch(storeData(data)),
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentForm);
+export default (StudentForm);
